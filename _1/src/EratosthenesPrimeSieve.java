@@ -14,20 +14,23 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
     @Override
     public boolean isPrime(int p) {
-        return false;
+        return primes.contains(p);
     }
 
     @Override
     public void printPrimes() {
-
+        for (int i : primes)
+            System.out.println(i);
     }
 
     private void sieveAlgorithm() {
         for (int i = 0; i < numbers.size(); i++) {
             for (int j : numbers) {
-                if ()
-                primes.add(j);
+                if (j+1%numbers.get(0) == 0)
+                    numbers.remove(j-2);
             }
+            primes.add(numbers.get(0));
+            numbers.remove(0);
         }
     }
 }
