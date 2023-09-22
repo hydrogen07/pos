@@ -1,4 +1,6 @@
-public interface EratosthenesPrimeSieve {
-    boolean isPrime(int p);
-    void printPrimes();
+public class EratosthenesPrimeSieve {
+
+    public EratosthenesPrimeSieve() {
+        
+    }
 }
