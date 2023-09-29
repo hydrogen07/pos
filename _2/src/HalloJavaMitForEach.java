@@ -13,5 +13,7 @@ public class HalloJavaMitForEach {
         list.forEach((String s) -> System.out.print(s));
         System.out.println();
         list.forEach(System.out::print);
+
+        NumberTester numberTester = new NumberTester("numbers.txt");
     }
 }
