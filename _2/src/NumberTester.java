@@ -1,27 +1,34 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class NumberTester {
 
-    private List<int[]> input;
-    private NumberTest oddEvenTester;
+    private ArrayList<int[]> input;
+    private NumberTest oddEvenTester, primeTester, palindromeTester;
 
     public NumberTester(String fileName) {
         try (BufferedReader fIn = new BufferedReader(new FileReader(fileName))) {
-            input = new ArrayList<>(Integer.parseInt(fIn.readLine()));
-            for (int[] cInput : input) {
-                cInput = new int[]{Integer.parseInt(Arrays.toString(fIn.readLine().split(" ")))};
-                System.out.println(cInput);
-            }
+            input = new ArrayList<>(Collections.nCopies(Integer.parseInt(fIn.readLine()), new int[2]));
+            for (int[] cInput : input)
+                cInput = Arrays.stream(fIn.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
     }
 
+    public void testFile() {
+
+    }
+
     public void setOddEvenTest(NumberTest oddEvenTester) {
         this.oddEvenTester = oddEvenTester;
+    }
+
+    public void setPrimeTester(NumberTest primeTester) {
+        this.primeTester = primeTester;
+    }
+
+    public void setPalindromeTester(NumberTest palindromeTester) {
+        this.palindromeTester = palindromeTester;
     }
 }
