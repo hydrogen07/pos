@@ -10,7 +10,7 @@ public class NumberTester {
     private NumberTest oddEvenTester;
 
     public NumberTester(String fileName) {
-        try (BufferedReader fIn = new BufferedReader(new FileReader(new File(fileName)))) {
+        try (BufferedReader fIn = new BufferedReader(new FileReader(fileName))) {
             input = new ArrayList<>(Integer.parseInt(fIn.readLine()));
             for (int[] cInput : input) {
                 cInput = new int[]{Integer.parseInt(Arrays.toString(fIn.readLine().split(" ")))};
