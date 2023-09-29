@@ -17,7 +17,18 @@ public class NumberTester {
     }
 
     public void testFile() {
-
+        for (int[] cInput : input) {
+            switch (cInput[0]) {
+                case 1:
+                    System.out.println(oddEvenTester.numberTest(cInput[1])); break;
+                case 2:
+                    System.out.println(primeTester.numberTest(cInput[1])); break;
+                case 3:
+                    System.out.println(palindromeTester.numberTest(cInput[1])); break;
+                default:
+                    System.out.println();
+            }
+        }
     }
 
     public void setOddEvenTest(NumberTest oddEvenTester) {
