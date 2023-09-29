@@ -10,6 +10,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         primes = new ArrayList<>();
         for (int i = 2; i <= upperBound; i++)
             numbers.add(i);
+        sieveAlgorithm();
     }
 
     @Override
@@ -26,7 +27,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     private void sieveAlgorithm() {
         for (int i = 0; i < numbers.size(); i++) {
             for (int j : numbers) {
-                if (j+1%numbers.get(0) == 0)
+                if (j%numbers.get(0) == 0)
                     numbers.remove(j-2);
             }
             primes.add(numbers.get(0));
