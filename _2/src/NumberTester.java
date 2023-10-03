@@ -22,11 +22,11 @@ public class NumberTester {
         for (ArrayList<String> cInput : input) {
             switch (Integer.parseInt(cInput.get(0))) {
                 case 1:
-                    System.out.println(oddEvenTester.numberTest(Integer.parseInt(cInput.get(1)))); break;
+                    System.out.println(oddEvenTester.numberTest(Integer.parseInt(cInput.get(1))) ? "EVEN" : "ODD"); break;
                 case 2:
-                    System.out.println(primeTester.numberTest(Integer.parseInt(cInput.get(1)))); break;
+                    System.out.println(primeTester.numberTest(Integer.parseInt(cInput.get(1))) ? "PRIME" : "NO PRIME"); break;
                 case 3:
-                    System.out.println(palindromeTester.numberTest(Integer.parseInt(cInput.get(1)))); break;
+                    System.out.println(palindromeTester.numberTest(Integer.parseInt(cInput.get(1))) ? "PALINDROME" : "NO PALINDROME"); break;
                 default:
                     System.out.println("test");
             }
