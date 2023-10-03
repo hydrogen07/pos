@@ -1,4 +1,4 @@
-package _2.beispiel3;
+package beispiel3;
 
 import java.io.*;
 import java.util.*;

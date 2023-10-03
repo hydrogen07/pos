@@ -1,5 +1,5 @@
-import _2.beispiel2.HalloJavaMitForEach;
-import _2.beispiel3.NumberTester;
+import beispiel2.HalloJavaMitForEach;
+import beispiel3.NumberTester;
 
 public class Main {
 
