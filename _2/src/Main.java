@@ -1,3 +1,6 @@
+import _2.beispiel2.HalloJavaMitForEach;
+import _2.beispiel3.NumberTester;
+
 public class Main {
 
     public static void main(String[] args) {
