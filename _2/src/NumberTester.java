@@ -3,30 +3,32 @@ import java.util.*;
 
 public class NumberTester {
 
-    private ArrayList<int[]> input;
+    private ArrayList<ArrayList<String>> input;
     private NumberTest oddEvenTester, primeTester, palindromeTester;
 
     public NumberTester(String fileName) {
         try (BufferedReader fIn = new BufferedReader(new FileReader(fileName))) {
-            input = new ArrayList<>(Collections.nCopies(Integer.parseInt(fIn.readLine()), new int[2]));
-            for (int[] cInput : input)
-                cInput = Arrays.stream(fIn.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+            input = new ArrayList<>(Integer.parseInt(fIn.readLine()));
+            for (int i = 0; i < 5; i++)
+                input.add(new ArrayList<>(2));
+            for (ArrayList<String> cInput : input)
+                cInput.addAll(List.of(fIn.readLine().split(" ")));
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
     }
 
     public void testFile() {
-        for (int[] cInput : input) {
-            switch (cInput[0]) {
+        for (ArrayList<String> cInput : input) {
+            switch (Integer.parseInt(cInput.get(0))) {
                 case 1:
-                    System.out.println(oddEvenTester.numberTest(cInput[1])); break;
+                    System.out.println(oddEvenTester.numberTest(Integer.parseInt(cInput.get(1)))); break;
                 case 2:
-                    System.out.println(primeTester.numberTest(cInput[1])); break;
+                    System.out.println(primeTester.numberTest(Integer.parseInt(cInput.get(1)))); break;
                 case 3:
-                    System.out.println(palindromeTester.numberTest(cInput[1])); break;
+                    System.out.println(palindromeTester.numberTest(Integer.parseInt(cInput.get(1)))); break;
                 default:
-                    System.out.println();
+                    System.out.println("test");
             }
         }
     }
