@@ -17,14 +17,14 @@ public class ComplexCalculator extends AbstractCalculator {
 
                 (x, y) -> {
                     Number n = new Number();
-                    n.setA(x.getA()*y.getB()-x.getB()*y.getA());
-                    n.setB(0);
+                    n.setA(x.getA()*y.getA()-x.getB()*y.getB());
+                    n.setB(x.getA()*y.getB()+x.getB()*y.getA());
                     return n;},
 
                 (x, y) -> {
                     Number n = new Number();
-                    n.setA(x.getA()*y.getA()+x.getB()*y.getB());
-                    n.setB(0);
+                    n.setA((x.getA()*y.getA()+x.getB()*y.getB()) / (y.getA()*y.getA()+y.getB()*y.getB()));
+                    n.setB((x.getB()*y.getA()-x.getA()*y.getB()) / (y.getA()*y.getA()+y.getB()*y.getB()));
                     return n;});
     }
 
