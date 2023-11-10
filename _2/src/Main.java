@@ -26,10 +26,9 @@ public class Main {
         });
         numberTester.setPalindromeTester(number -> {
             String s = String.valueOf(number);
-            StringBuilder rev = new StringBuilder();
-            for (int i = s.length() - 1; i >= 0; i--)
-                rev.append(s.charAt(i));
-            return s.contentEquals(rev);
+            StringBuilder rev = new StringBuilder(s);
+            rev.reverse();
+            return s.equals(rev.toString());
         });
         System.out.println();
         numberTester.testFile();
